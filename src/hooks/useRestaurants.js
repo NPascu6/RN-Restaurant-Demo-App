@@ -19,11 +19,11 @@ export default () => {
         catch (err) {
             setErrorMessage('Something went wrong')
         }
-    }
+    };
 
     useEffect(() => {
         searchApi('pasta')
     }, []);
 
-    return [searchApi, restaurants, errorMessage]
+    return [searchApi, restaurants, errorMessage];
 }

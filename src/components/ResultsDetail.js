@@ -9,7 +9,7 @@ const ResultsDetail = ({ result }) => {
             <Text>{result.rating} Stars, {result.review_count} Reviews</Text>
         </View>
     )
-}
+};
 
 const styles = StyleSheet.create({
     imageStyle: {

@@ -4,7 +4,7 @@ import SearchBar from '../components/SearchBar';
 import useRestaurants from '../hooks/useRestaurants';
 import ResultsList from '../components/ResultsList';
 
-const SearchScreen = () => {
+const SearchScreen = ({ navigation }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchApi, restaurants, errorMessage] = useRestaurants();
 
@@ -16,21 +16,36 @@ const SearchScreen = () => {
     }
 
     return (
-        <View style={{flex: 1}}>
+        <>
             <SearchBar
                 searchTerm={searchTerm}
                 onSearchTermChange={setSearchTerm}
                 onTermSubmit={() => searchApi(searchTerm)}
             />
             {errorMessage ? <Text>{errorMessage}</Text> : null}
-            <Text>Number of restaurants: {restaurants.length}</Text>
             <ScrollView>
-                <ResultsList title="Cost Effective" results={filterRestaurantsByPrice('$')} />
-                <ResultsList title="Pricier" results={filterRestaurantsByPrice('$$')} />
-                <ResultsList title="$$$$$" results={filterRestaurantsByPrice('$$$')} />
-                <ResultsList title="Bloomberg" results={filterRestaurantsByPrice('$$$$')} />
+                <ResultsList
+                    title="Cost Effective"
+                    results={filterRestaurantsByPrice('$')}
+                    navigation={navigation}
+                />
+                <ResultsList
+                    title="Pricier"
+                    results={filterRestaurantsByPrice('$$')}
+                    navigation={navigation}
+                />
+                <ResultsList
+                    title="$$$$$"
+                    results={filterRestaurantsByPrice('$$$')}
+                    navigation={navigation}
+                />
+                <ResultsList
+                    title="Bloomberg"
+                    results={filterRestaurantsByPrice('$$$$')}
+                    navigation={navigation}
+                />
             </ScrollView>
-        </View>
+        </>
     )
 }
 
