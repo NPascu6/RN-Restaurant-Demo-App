@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     iconStyle: {
         fontSize: 35,
         alignSelf: "center",
-        marginHorizontal: 10
+        marginHorizontal: 15
     }
 });
 

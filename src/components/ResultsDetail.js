@@ -15,13 +15,14 @@ const styles = StyleSheet.create({
     imageStyle: {
         width: 250,
         height: 120,
-        borderRadius: 5
+        borderRadius: 5,
+        marginBottom: 5
     },
     nameStyle: {
         fontWeight: 'bold'
     },
     container: {
-        margin: 10
+        marginHorizontal: 15
     }
 });
 
