@@ -4,7 +4,7 @@ import { withNavigation } from 'react-navigation';
 import ResultsDetail from '../components/ResultsDetail';
 
 const ResultsList = ({ title, results, navigation }) => {
-    if (!results.length === 0) {
+    if (!results.length) {
         return null;
     }
 
